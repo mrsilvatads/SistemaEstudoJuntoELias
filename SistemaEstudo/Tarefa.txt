@@ -1,0 +1,18 @@
+﻿Criar a parte relacionado a produto com as seguinte propriedades
+Id
+Nome
+Descrição
+Valor
+Unidade (metro, kilo, cabeça)
+Data de criação 
+Data de edição
+Quantidade estoque
+Status
+Categoria(Alimentação, Produto limpeza, Higiene pessoal e outros)
+
+
+
+Categoria
+ID
+Nome
+Descrição

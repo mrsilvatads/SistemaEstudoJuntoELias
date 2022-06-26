@@ -1,0 +1,11 @@
+E:\C#\SistemaEstudo\SistemaEstudo\bin\Debug\SistemaEstudo.exe.config
+E:\C#\SistemaEstudo\SistemaEstudo\bin\Debug\SistemaEstudo.exe
+E:\C#\SistemaEstudo\SistemaEstudo\bin\Debug\SistemaEstudo.pdb
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.csproj.AssemblyReference.cache
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.frmPrincipal.resources
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.Properties.Resources.resources
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.csproj.GenerateResource.cache
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.csproj.CoreCompileInputs.cache
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.exe
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.pdb
+E:\C#\SistemaEstudo\SistemaEstudo\obj\Debug\SistemaEstudo.Views.CadPessoa.resources
