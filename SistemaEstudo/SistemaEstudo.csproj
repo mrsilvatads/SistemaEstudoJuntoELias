@@ -47,32 +47,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CategoriaBLL.cs" />
     <Compile Include="BLL\EstadoBLL.cs" />
     <Compile Include="BLL\PessoaBLL.cs" />
+    <Compile Include="DAO\CategoriaDao.cs" />
     <Compile Include="DAO\EstadoDao.cs" />
     <Compile Include="DAO\PessoaDao.cs" />
     <Compile Include="Entidades\Base.cs" />
+    <Compile Include="Entidades\CategoriaModel.cs" />
     <Compile Include="Entidades\EstadoModel.cs" />
     <Compile Include="Entidades\PessoaModel.cs" />
     <Compile Include="Entidades\TipoPessoa.cs" />
-    <Compile Include="Views\CadPessoa.cs">
+    <Compile Include="UI\CadCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CadPessoa.Designer.cs">
+    <Compile Include="UI\CadCategoria.Designer.cs">
+      <DependentUpon>CadCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CadPessoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CadPessoa.Designer.cs">
       <DependentUpon>CadPessoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Principal.cs">
+    <Compile Include="UI\CadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Principal.Designer.cs">
+    <Compile Include="UI\CadProduto.Designer.cs">
+      <DependentUpon>CadProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Principal.Designer.cs">
       <DependentUpon>Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\CadPessoa.resx">
+    <EmbeddedResource Include="UI\CadCategoria.resx">
+      <DependentUpon>CadCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CadPessoa.resx">
       <DependentUpon>CadPessoa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Principal.resx">
+    <EmbeddedResource Include="UI\CadProduto.resx">
+      <DependentUpon>CadProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,8 +119,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="info.txt" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

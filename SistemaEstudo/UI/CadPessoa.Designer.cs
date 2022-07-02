@@ -74,6 +74,7 @@ namespace SistemaEstudo.Views
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(45, 20);
             this.txtId.TabIndex = 2;
+            this.txtId.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtId_KeyPress);
             // 
             // txtNome
             // 
@@ -165,6 +166,7 @@ namespace SistemaEstudo.Views
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalvar.Location = new System.Drawing.Point(79, 221);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(204, 23);
@@ -195,6 +197,8 @@ namespace SistemaEstudo.Views
             this.dgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPessoas.Location = new System.Drawing.Point(12, 259);
             this.dgvPessoas.Name = "dgvPessoas";
+            this.dgvPessoas.ReadOnly = true;
+            this.dgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPessoas.Size = new System.Drawing.Size(504, 239);
             this.dgvPessoas.TabIndex = 17;
             // 
@@ -222,6 +226,7 @@ namespace SistemaEstudo.Views
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "CadPessoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pessoas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPessoas)).EndInit();
             this.ResumeLayout(false);

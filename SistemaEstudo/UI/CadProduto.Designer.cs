@@ -1,7 +1,6 @@
-﻿
-namespace SistemaEstudo
+﻿namespace SistemaEstudo.Views
 {
-    partial class frmPrincipal
+    partial class CadProduto
     {
         /// <summary>
         /// Required designer variable.
@@ -29,35 +28,21 @@ namespace SistemaEstudo
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(29, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CadastrarPessoa";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // frmPrincipal
+            // CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 485);
-            this.Controls.Add(this.button1);
-            this.Name = "frmPrincipal";
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(540, 510);
+            this.Name = "CadProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Principal";
+            this.Text = "CadProduto";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
     }
 }
-

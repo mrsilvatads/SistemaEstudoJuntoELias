@@ -23,7 +23,6 @@ namespace SistemaEstudo.Views
             PreencheComboBoxEstado();
             PreencheGrid();
         }
-
         private void PreencheGrid()
         {
             var bll = new PessoaBLL();
@@ -33,7 +32,6 @@ namespace SistemaEstudo.Views
             dgvPessoas.DataSource = pessoas;
             dgvPessoas.Refresh();
         }
-
         private void PreencheComboBoxEstado()
         {
             var bll = new EstadoBLL();
@@ -43,7 +41,6 @@ namespace SistemaEstudo.Views
             cmbEstado.DisplayMember = "Sigla";
             cmbEstado.ValueMember = "id";
         }
-
         private void PreencheComboBoxTipoPessoa()
         {
             var tp = new TipoPessoa();
@@ -53,7 +50,6 @@ namespace SistemaEstudo.Views
             cmbTipoPessoa.DisplayMember = "Descricao";
             cmbTipoPessoa.ValueMember = "id";
         }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (!ValidaPessoa())
@@ -87,6 +83,13 @@ namespace SistemaEstudo.Views
             pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
             bll.CadastrarPessoa(pessoa);
             PreencheGrid();
+        }
+        private void txtId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
