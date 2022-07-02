@@ -39,6 +39,7 @@ namespace SistemaEstudo.Views
             categoria.DataCriacao = DateTime.Now;
             categoria.DataUltimaAlteracao = DateTime.Now;
             bll.Cadastrar(categoria);
+            PreencherGrid();
             LimparTela();
         }
         private void LimparTela()

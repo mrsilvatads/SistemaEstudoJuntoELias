@@ -28,7 +28,7 @@ namespace SistemaEstudo.Views
             var bll = new PessoaBLL();
             var pessoas = bll.RetornaPessoas();
 
-            dgvPessoas.DataSource = null; //Limpa o grid;
+            dgvPessoas.DataSource = null;
             dgvPessoas.DataSource = pessoas;
             dgvPessoas.Refresh();
         }
@@ -83,6 +83,7 @@ namespace SistemaEstudo.Views
             pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
             bll.CadastrarPessoa(pessoa);
             PreencheGrid();
+            LimparCampos();
         }
         private void txtId_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -90,6 +91,17 @@ namespace SistemaEstudo.Views
             {
                 e.Handled = true;
             }
+        }
+        private void LimparCampos()
+        {
+            txtId.Text = "";
+            txtNome.Text = "";
+            txtSobrenome.Text = "";
+            txtDocumento.Text = "";
+            txtEndere.Text = "";
+            txtTelefone.Text = "";
+            //combos
+            //add ainda     
         }
     }
 }
