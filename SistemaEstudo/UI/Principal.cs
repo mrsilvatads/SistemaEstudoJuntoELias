@@ -24,6 +24,8 @@ namespace SistemaEstudo
         }
         private void btnProduto_Click(object sender, EventArgs e)
         {
+            CadProduto telaProdutos = new CadProduto();
+            telaProdutos.ShowDialog();
 
         }
         private void btnCategoria_Click(object sender, EventArgs e)

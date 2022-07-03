@@ -50,13 +50,16 @@
     <Compile Include="BLL\CategoriaBLL.cs" />
     <Compile Include="BLL\EstadoBLL.cs" />
     <Compile Include="BLL\PessoaBLL.cs" />
+    <Compile Include="BLL\ProdutoBLL.cs" />
     <Compile Include="DAO\CategoriaDao.cs" />
     <Compile Include="DAO\EstadoDao.cs" />
     <Compile Include="DAO\PessoaDao.cs" />
+    <Compile Include="DAO\ProdutoDao.cs" />
     <Compile Include="Entidades\Base.cs" />
     <Compile Include="Entidades\CategoriaModel.cs" />
     <Compile Include="Entidades\EstadoModel.cs" />
     <Compile Include="Entidades\PessoaModel.cs" />
+    <Compile Include="Entidades\ProdutoModel.cs" />
     <Compile Include="Entidades\TipoPessoa.cs" />
     <Compile Include="UI\CadCategoria.cs">
       <SubType>Form</SubType>

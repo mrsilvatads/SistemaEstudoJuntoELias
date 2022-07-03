@@ -18,9 +18,9 @@ namespace SistemaEstudo.Views
         private void PreencherGrid()
         {
             var bll = new CategoriaBLL();
-            var categoria = bll.RetornarCategorias();
+            var categorias = bll.RetornarCategorias();
             dgvCategorias.DataSource = null; //Limpa o grid antes de inserir dados;
-            dgvCategorias.DataSource = categoria;
+            dgvCategorias.DataSource = categorias;
             dgvCategorias.Refresh();
         }
 
@@ -29,6 +29,7 @@ namespace SistemaEstudo.Views
             if (!ValidarTela())
                 MessageBox.Show("Favor peencher campos obrigatorios!");
             Salvar();
+            MessageBox.Show("Categoria Cadastrada com sucesso!");
         }
         private void Salvar()
         {
@@ -71,6 +72,27 @@ namespace SistemaEstudo.Views
             {
                 e.Handled = true;
             }
+        }
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "" || txtId.Text == null)
+            {
+                MessageBox.Show("Favor informar id para pesquisa de uma Categoria!");
+                return;
+            }
+            int categoriaId = Convert.ToInt32(txtId.Text);
+            var bll = new CategoriaBLL();
+            var retornoCategoria = bll.RegistroUnico(categoriaId);
+            if (retornoCategoria != null && categoriaId > 0 )
+                PreencherCampos(retornoCategoria);
+            else
+                MessageBox.Show("nenhuma Categoria foi encontrada!");
+        }
+        private void PreencherCampos(CategoriaModel categoria)
+        {
+            txtId.Text = Convert.ToInt32(categoria.Id).ToString();
+            txtNome.Text = categoria.Nome;
+            txtDescricao.Text = categoria.Descricao;
         }
     }
 }

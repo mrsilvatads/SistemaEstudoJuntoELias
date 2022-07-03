@@ -4,10 +4,10 @@ Nome
 Descrição
 Valor
 Unidade (metro, kilo, cabeça)
-Data de criação 
-Data de edição
+Data de criação x 
+Data de edição  x
 Quantidade estoque
-Status
+Status  x
 Categoria(Alimentação, Produto limpeza, Higiene pessoal e outros)
 
 

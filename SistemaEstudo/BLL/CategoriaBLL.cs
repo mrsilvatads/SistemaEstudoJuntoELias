@@ -18,5 +18,14 @@ namespace SistemaEstudo.BLL
             var dao = new CategoriaDao();
             return dao.GetAll();
         }
+
+        //registro unico
+        public CategoriaModel RegistroUnico(int idCategoria)
+        {
+            var categoria = new CategoriaModel();
+            var dao = new CategoriaDao();
+            categoria = dao.GetCategoria(idCategoria);
+            return categoria;
+        }
     }
 }

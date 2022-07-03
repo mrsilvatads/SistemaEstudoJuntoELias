@@ -36,6 +36,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(117, 30);
             this.btnCadastrar.TabIndex = 0;
-            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.Text = "Salvar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -116,12 +117,23 @@
             this.dgvCategorias.Size = new System.Drawing.Size(602, 430);
             this.dgvCategorias.TabIndex = 7;
             // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(539, 175);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 41);
+            this.btnPesquisar.TabIndex = 8;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
             // CadCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 667);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.DataGridView dgvCategorias;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }
