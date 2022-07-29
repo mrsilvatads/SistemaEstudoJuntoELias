@@ -194,6 +194,7 @@
             // 
             // cmbUnidade
             // 
+            this.cmbUnidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUnidade.FormattingEnabled = true;
             this.cmbUnidade.Items.AddRange(new object[] {
             "METRO",

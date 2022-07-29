@@ -6,3 +6,5 @@
 100;teste;teste;12131;;1212;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:45:05;03/07/2022 14:45:05
 555;testeteesasd;dasdsa;1212312;KILO;12;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:55:43;03/07/2022 14:55:43
 444;dasdasdd;sdasdasda;2232;KILO;21;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 15:10:51;03/07/2022 15:10:51
+89989;mouse pad;informatica;20;CABEÇA;2;SistemaEstudo.Entidades.CategoriaModel;0;29/07/2022 17:09:36;29/07/2022 17:09:36
+222111;cxzczx;xzxc;10;METRO;90;SistemaEstudo.Entidades.CategoriaModel;1;29/07/2022 17:14:45;29/07/2022 17:14:46

@@ -13,6 +13,8 @@ namespace SistemaEstudo.Entidades
         public int Valor { get; set; }
         public string Unidade { get; set; }//public decimal Unidade { get; set; }
         public int QuantidadeEstoque { get; set; }
+        //teste status
+        public int Status { get; set; }///teste
         public CategoriaModel Categoria { get; set; }
     }
 }

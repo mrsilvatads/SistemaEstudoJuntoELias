@@ -47,11 +47,10 @@ namespace SistemaEstudo.DAO
                     ///produto.Status = boolean.Parse(dado[6].ToString());
                     //CategoriaModel categoria = new CategoriaModel();
                     //produto.Categoria.Id = Convert.ToInt32(dado[3]);
-                    //produto.Status = Boolean.Parse(dado[3]);//  Convert.ToBoolean(dado[3]);
-                    //produto.DataCriacao = Convert.ToDateTime(dado[3].ToString());
-                    //produto.DataUltimaAlteracao = Convert.ToDateTime(dado[4]);
-
-
+                    //produto.Status = Convert.ToString(dados[7]);//Convert.ToBoolean(dados[7]);//boolean.Parse(dado[7]);
+                    //produto.Status = Boolean.Parse(dado[7]);//  Convert.ToBoolean(dado[3]);
+                    produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
+                    produto.DataUltimaAlteracao = Convert.ToDateTime(dado[9]);
                     retorno.Add(produto);
                 }
                 return retorno;

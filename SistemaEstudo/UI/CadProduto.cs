@@ -41,21 +41,29 @@ namespace SistemaEstudo.Views
         }
         private void Salvar()
         {
-            var bll = new ProdutoBLL();
-            produto.Id = Convert.ToInt32(txtId.Text);
-            produto.Nome = txtNome.Text;
-            produto.Descricao = txtDescricao.Text;
-            produto.Valor = Convert.ToInt32(txtValor.Text);
-            produto.Unidade = (cmbUnidade.SelectedItem).ToString(); //produto.Unidade = Convert.ToDecimal(cmbUnidade.Text);
-            produto.QuantidadeEstoque = Convert.ToInt32(txtQuantidadeEstoque.Text);
-            //produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
-            produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
-            produto.DataCriacao = DateTime.Now;
-            produto.DataUltimaAlteracao = DateTime.Now;
-            produto.Status = true;//implementar campo
-            bll.Cadastrar(produto);
-            PreencherGrid();
-            LimparTela();
+            try
+            {
+                var bll = new ProdutoBLL();
+                produto.Id = Convert.ToInt32(txtId.Text);
+                produto.Nome = txtNome.Text;
+                produto.Descricao = txtDescricao.Text;
+                produto.Valor = Convert.ToInt32(txtValor.Text);
+                produto.Unidade = (cmbUnidade.SelectedItem).ToString(); //produto.Unidade = Convert.ToDecimal(cmbUnidade.Text);
+                produto.QuantidadeEstoque = Convert.ToInt32(txtQuantidadeEstoque.Text);
+                //produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
+                produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
+                produto.DataCriacao = DateTime.Now;
+                produto.DataUltimaAlteracao = DateTime.Now;
+                // produto.Status = true;//implementar campo
+                produto.Status = cmbStatus.SelectedIndex;
+                bll.Cadastrar(produto);
+                PreencherGrid();
+                LimparTela();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         private void LimparTela()
         {

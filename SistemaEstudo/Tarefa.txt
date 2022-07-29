@@ -16,3 +16,14 @@ Categoria
 ID
 Nome
 Descrição
+
+****************************
+https://pt.stackoverflow.com/questions/309564/ler-um-valor-dentro-de-um-json-complexo-em-c
+public class Dialogflow
+    {
+        public string id { get; set; }
+        public string timestamp { get; set; }
+        public string lang { get; set; }
+        public string sessionId { get; set; }
+        public string result { get; set; }
+    }
