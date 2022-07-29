@@ -61,6 +61,7 @@
     <Compile Include="Entidades\PessoaModel.cs" />
     <Compile Include="Entidades\ProdutoModel.cs" />
     <Compile Include="Entidades\TipoPessoa.cs" />
+    <Compile Include="ENUM\StatusProduto.cs" />
     <Compile Include="UI\CadCategoria.cs">
       <SubType>Form</SubType>
     </Compile>

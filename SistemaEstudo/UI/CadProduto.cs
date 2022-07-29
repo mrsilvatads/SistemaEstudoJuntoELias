@@ -1,6 +1,7 @@
 ﻿using SistemaEstudo.BLL;
 using SistemaEstudo.Entidades;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SistemaEstudo.Views
@@ -15,6 +16,7 @@ namespace SistemaEstudo.Views
             produto = new ProdutoModel();
             CarregarTela();
             PreencherGrid();
+            CarregarComboStatus(cmbStatus);
         }
         private void PreencherGrid()
         {
@@ -46,7 +48,8 @@ namespace SistemaEstudo.Views
             produto.Valor = Convert.ToInt32(txtValor.Text);
             produto.Unidade = (cmbUnidade.SelectedItem).ToString(); //produto.Unidade = Convert.ToDecimal(cmbUnidade.Text);
             produto.QuantidadeEstoque = Convert.ToInt32(txtQuantidadeEstoque.Text);
-            produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
+            //produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
+            produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
             produto.DataCriacao = DateTime.Now;
             produto.DataUltimaAlteracao = DateTime.Now;
             produto.Status = true;//implementar campo
@@ -75,6 +78,39 @@ namespace SistemaEstudo.Views
             cmbCategoria.ValueMember = "id";
             cmbCategoria.DisplayMember = "nome";
             cmbCategoria.DataSource = categorias;
+        }
+
+        private void CarregarComboStatus(ComboBox cmbStatus)
+        {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+            foreach (int enumValue in
+            Enum.GetValues(typeof(ENUM.StatusProduto)))
+            {
+                dictionary.Add(Enum.GetName(typeof(ENUM.StatusProduto), enumValue), enumValue);
+            }
+            cmbStatus.DisplayMember = "Key";
+            cmbStatus.ValueMember = "Value";
+            cmbStatus.DataSource = new BindingSource(dictionary, null);
+        }
+
+        private void dgvProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Enabled = false;
+            //var codProduto = int.Parse(dgvProduto.SelectedCells[0].Value.ToString());
+            //var alterar = new For
+            //txtNome.Text = produto.Nome;
+            //MessageBox.Show(e.RowIndex.ToString());
+
+            for (int i = 0; i < dgvProduto.Rows.Count; i++)
+            {
+                //bool selecionado = Convert.ToBoolean(dgvProduto.Rows[i].Cells[0].Value);
+                //if (selecionado)
+                //{
+                txtId.Text = dgvProduto.Rows[i].Cells[0].Value.ToString();
+                txtNome.Text = dgvProduto.Rows[i].Cells[0].Value.ToString();
+                txtDescricao.Text = dgvProduto.Rows[i].Cells[1].Value.ToString();
+                //}
+            }
         }
     }
 }

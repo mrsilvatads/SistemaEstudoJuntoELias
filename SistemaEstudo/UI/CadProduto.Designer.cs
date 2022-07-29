@@ -31,7 +31,6 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtQuantidadeEstoque = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,6 +45,7 @@
             this.dgvProduto = new System.Windows.Forms.DataGridView();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +75,6 @@
             this.txtQuantidadeEstoque.Name = "txtQuantidadeEstoque";
             this.txtQuantidadeEstoque.Size = new System.Drawing.Size(159, 25);
             this.txtQuantidadeEstoque.TabIndex = 6;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(388, 165);
-            this.txtStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(116, 25);
-            this.txtStatus.TabIndex = 7;
             // 
             // txtValor
             // 
@@ -185,11 +177,15 @@
             this.dgvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduto.Location = new System.Drawing.Point(12, 304);
             this.dgvProduto.Name = "dgvProduto";
+            this.dgvProduto.ReadOnly = true;
+            this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(606, 385);
             this.dgvProduto.TabIndex = 20;
+            this.dgvProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellDoubleClick);
             // 
             // cmbCategoria
             // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoria.FormattingEnabled = true;
             this.cmbCategoria.Location = new System.Drawing.Point(388, 124);
             this.cmbCategoria.Name = "cmbCategoria";
@@ -208,12 +204,22 @@
             this.cmbUnidade.Size = new System.Drawing.Size(121, 25);
             this.cmbUnidade.TabIndex = 22;
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(388, 170);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(121, 25);
+            this.cmbStatus.TabIndex = 23;
+            // 
             // CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 701);
+            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.cmbUnidade);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.dgvProduto);
@@ -228,7 +234,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtValor);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtQuantidadeEstoque);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnSalvar);
@@ -248,7 +253,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtQuantidadeEstoque;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
@@ -263,5 +267,6 @@
         private System.Windows.Forms.DataGridView dgvProduto;
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ComboBox cmbUnidade;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }
