@@ -38,6 +38,7 @@ namespace SistemaEstudo
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(29, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 23);
@@ -48,6 +49,7 @@ namespace SistemaEstudo
             // 
             // btnCategoria
             // 
+            this.btnCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCategoria.Location = new System.Drawing.Point(140, 21);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(75, 23);
@@ -58,6 +60,7 @@ namespace SistemaEstudo
             // 
             // btnProduto
             // 
+            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProduto.Location = new System.Drawing.Point(221, 21);
             this.btnProduto.Name = "btnProduto";
             this.btnProduto.Size = new System.Drawing.Size(75, 23);

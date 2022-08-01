@@ -37,6 +37,9 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.chkAtiva = new System.Windows.Forms.CheckBox();
+            this.chkInatinativa = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +76,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 123);
+            this.label3.Location = new System.Drawing.Point(20, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 3;
@@ -99,7 +102,7 @@
             // 
             // txtDescricao
             // 
-            this.txtDescricao.Location = new System.Drawing.Point(91, 119);
+            this.txtDescricao.Location = new System.Drawing.Point(91, 106);
             this.txtDescricao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(369, 25);
@@ -127,12 +130,46 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
+            // chkAtiva
+            // 
+            this.chkAtiva.AutoSize = true;
+            this.chkAtiva.Location = new System.Drawing.Point(91, 142);
+            this.chkAtiva.Name = "chkAtiva";
+            this.chkAtiva.Size = new System.Drawing.Size(55, 21);
+            this.chkAtiva.TabIndex = 9;
+            this.chkAtiva.Text = "Ativa";
+            this.chkAtiva.UseVisualStyleBackColor = true;
+            this.chkAtiva.CheckedChanged += new System.EventHandler(this.chkAtiva_CheckedChanged);
+            // 
+            // chkInatinativa
+            // 
+            this.chkInatinativa.AutoSize = true;
+            this.chkInatinativa.Location = new System.Drawing.Point(152, 141);
+            this.chkInatinativa.Name = "chkInatinativa";
+            this.chkInatinativa.Size = new System.Drawing.Size(64, 21);
+            this.chkInatinativa.TabIndex = 10;
+            this.chkInatinativa.Text = "inativa";
+            this.chkInatinativa.UseVisualStyleBackColor = true;
+            this.chkInatinativa.CheckedChanged += new System.EventHandler(this.chkInatinativa_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(20, 142);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Status:";
+            // 
             // CadCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 667);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.chkInatinativa);
+            this.Controls.Add(this.chkAtiva);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.txtDescricao);
@@ -164,5 +201,8 @@
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.CheckBox chkAtiva;
+        private System.Windows.Forms.CheckBox chkInatinativa;
+        private System.Windows.Forms.Label label4;
     }
 }

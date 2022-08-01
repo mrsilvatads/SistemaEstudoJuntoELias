@@ -39,15 +39,16 @@ namespace SistemaEstudo.DAO
                 categoria.Id = Convert.ToInt32(dado[0]);
                 categoria.Nome = dado[1];
                 categoria.Descricao= dado[2];
+                categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
+                categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+               // categoria.Status = dados[5];
                 retornoCategorias.Add(categoria);
             }
             return retornoCategorias;
         }
         public CategoriaModel GetCategoria(int id)
-        //public int GetCategoria(int id)
         {
-            CategoriaModel retorno = new CategoriaModel();//teste elias
-
+            CategoriaModel retorno = new CategoriaModel();
             List<CategoriaModel> retornaCategoria = new List<CategoriaModel>();
             foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
             {
@@ -56,13 +57,12 @@ namespace SistemaEstudo.DAO
                 categoria.Id = Convert.ToInt32(dado[0]);
                 categoria.Nome = dado[1];
                 categoria.Descricao = dado[2];
+                //teste
+                categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
+                categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+                //categoria.Status = Convert.ToBoolean(dado[5]);
                 retornaCategoria.Add(categoria);
             }
-            //retornaCategoria = retornaCategoria.FirstOrDefault(cat => cat.Id == id);
-            //retornoCategorias = retornoCategorias.Where(cat => cat.Id == 1).ToList();
-            //where = linq   (cat => cat.id == Lambida)
-            /*return retorno = retornaCategoria;///faltando converter*/
-            //return retorno;//somente para não gerar erro na compilação
             var teste = retornaCategoria.FirstOrDefault(cat => cat.Id == id);
             return teste;
         }

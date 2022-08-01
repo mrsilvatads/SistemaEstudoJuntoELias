@@ -49,6 +49,11 @@ namespace SistemaEstudo.DAO
                     //produto.Categoria.Id = Convert.ToInt32(dado[3]);
                     //produto.Status = Convert.ToString(dados[7]);//Convert.ToBoolean(dados[7]);//boolean.Parse(dado[7]);
                     //produto.Status = Boolean.Parse(dado[7]);//  Convert.ToBoolean(dado[3]);
+                    /*
+                     
+                //bool checado = Convert.ToBoolean(dado[5].ToString());
+                //categoria.Status = checado;//Convert.ToBoolean(dado[5].ToString);
+                    */
                     produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
                     produto.DataUltimaAlteracao = Convert.ToDateTime(dado[9]);
                     retorno.Add(produto);

@@ -19,7 +19,7 @@ namespace SistemaEstudo.Views
         {
             var bll = new CategoriaBLL();
             var categorias = bll.RetornarCategorias();
-            dgvCategorias.DataSource = null; //Limpa o grid antes de inserir dados;
+            dgvCategorias.DataSource = null;
             dgvCategorias.DataSource = categorias;
             dgvCategorias.Refresh();
         }
@@ -39,7 +39,9 @@ namespace SistemaEstudo.Views
             categoria.Descricao = txtDescricao.Text;
             categoria.DataCriacao = DateTime.Now;
             categoria.DataUltimaAlteracao = DateTime.Now;
-            bll.Cadastrar(categoria);
+            //categoria.Status = chkAtiva.Checked;
+            categoria.Status = chkAtiva.Checked ? chkAtiva.Checked : chkInatinativa.Checked;
+            //bll.Cadastrar(categoria);
             PreencherGrid();
             LimparTela();
         }
@@ -93,6 +95,30 @@ namespace SistemaEstudo.Views
             txtId.Text = Convert.ToInt32(categoria.Id).ToString();
             txtNome.Text = categoria.Nome;
             txtDescricao.Text = categoria.Descricao;
+        }
+
+        private void chkAtiva_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = ((CheckBox)sender);
+            if (cb.Checked)
+            {
+                //MessageBox.Show("checado");
+                chkInatinativa.Enabled = false;
+            }
+            else
+                chkInatinativa.Enabled = true;
+        }
+
+        private void chkInatinativa_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox cb = ((CheckBox)sender);
+            if (cb.Checked)
+            {
+                //MessageBox.Show("checado");
+                chkAtiva.Enabled = false;
+            }
+            else
+                chkAtiva.Enabled = true;
         }
     }
 }

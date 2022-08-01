@@ -8,8 +8,19 @@ namespace SistemaEstudo.Views
 {
     public partial class CadProduto : Form
     {
+        int contexto = 0;
+
         ProdutoModel produto;
         CategoriaModel categoria;//teste elias 03/07/2022
+        List<ProdutoModel> listaProduto ;
+
+
+        //List<ModelAluno> alunos;
+        //ModelAluno aluno = new ModelAluno();
+        List<ProdutoModel> produtos2;
+        ProdutoModel produto2 = new ProdutoModel();
+
+        #region Construtor
         public CadProduto()
         {
             InitializeComponent();
@@ -18,6 +29,14 @@ namespace SistemaEstudo.Views
             PreencherGrid();
             CarregarComboStatus(cmbStatus);
         }
+
+        //public CadCategoria(ProdutoModel produtoAtual)
+        //{
+        //    produto = produtoAtual;
+        //}
+
+        #endregion
+
         private void PreencherGrid()
         {
             var bll = new ProdutoBLL();
@@ -43,22 +62,34 @@ namespace SistemaEstudo.Views
         {
             try
             {
-                var bll = new ProdutoBLL();
-                produto.Id = Convert.ToInt32(txtId.Text);
-                produto.Nome = txtNome.Text;
-                produto.Descricao = txtDescricao.Text;
-                produto.Valor = Convert.ToInt32(txtValor.Text);
-                produto.Unidade = (cmbUnidade.SelectedItem).ToString(); //produto.Unidade = Convert.ToDecimal(cmbUnidade.Text);
-                produto.QuantidadeEstoque = Convert.ToInt32(txtQuantidadeEstoque.Text);
-                //produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
-                produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
-                produto.DataCriacao = DateTime.Now;
-                produto.DataUltimaAlteracao = DateTime.Now;
-                // produto.Status = true;//implementar campo
-                produto.Status = cmbStatus.SelectedIndex;
-                bll.Cadastrar(produto);
-                PreencherGrid();
-                LimparTela();
+                if (btnSalvar.Text == "Salvar")
+                {
+                    var bll = new ProdutoBLL();
+                    produto.Id = Convert.ToInt32(txtId.Text);
+                    produto.Nome = txtNome.Text;
+                    produto.Descricao = txtDescricao.Text;
+                    produto.Valor = Convert.ToInt32(txtValor.Text);
+                    produto.Unidade = (cmbUnidade.SelectedItem).ToString();
+                    produto.QuantidadeEstoque = Convert.ToInt32(txtQuantidadeEstoque.Text);
+                    //produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;// produto.Categoria = (CategoriaModel)txtQuantidadeEstoque.Text; // pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;
+                    produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
+                    produto.DataCriacao = DateTime.Now;
+                    produto.DataUltimaAlteracao = DateTime.Now;
+                    // produto.Status = true;//implementar campo
+                    produto.Status = Convert.ToBoolean(cmbStatus.SelectedIndex);
+                    bll.Cadastrar(produto);
+                    PreencherGrid();
+                    LimparTela();
+
+                    /*
+                   pessoa.TipoPessoa = ((TipoPessoa)cmbTipoPessoa.SelectedItem).Id; desse jeito da erro!
+                   pessoa.Estado = ((EstadoModel)cmbEstado.SelectedItem).Id;    
+                   */
+                }
+                else
+                {
+                    MessageBox.Show("Alterar");
+                }
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -103,22 +134,44 @@ namespace SistemaEstudo.Views
 
         private void dgvProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtId.Enabled = false;
-            //var codProduto = int.Parse(dgvProduto.SelectedCells[0].Value.ToString());
-            //var alterar = new For
-            //txtNome.Text = produto.Nome;
-            //MessageBox.Show(e.RowIndex.ToString());
-
-            for (int i = 0; i < dgvProduto.Rows.Count; i++)
+            try
             {
-                //bool selecionado = Convert.ToBoolean(dgvProduto.Rows[i].Cells[0].Value);
-                //if (selecionado)
-                //{
-                txtId.Text = dgvProduto.Rows[i].Cells[0].Value.ToString();
-                txtNome.Text = dgvProduto.Rows[i].Cells[0].Value.ToString();
-                txtDescricao.Text = dgvProduto.Rows[i].Cells[1].Value.ToString();
+                if (dgvProduto.SelectedRows.Count > 0)
+                {
+
+                    listaProduto = new List<ProdutoModel>();
+                    produto = new ProdutoModel();
+
+                    txtId.Enabled = false;
+                    btnSalvar.Text = "Alterar";
+
+                    txtId.Text = dgvProduto.SelectedRows[0].Cells[7].Value.ToString();
+                    txtNome.Text =  dgvProduto.SelectedRows[0].Cells[0].Value.ToString();
+                    txtDescricao.Text = dgvProduto.SelectedRows[0].Cells[1].Value.ToString();
+                    txtValor.Text = dgvProduto.SelectedRows[0].Cells[2].Value.ToString();
+                    txtQuantidadeEstoque.Text = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
+                    //cmbUnidade.SelectedItem = Convert.ToInt32(dgvProduto.SelectedRows[0].Cells[3].ToString());//cmbUnidade.SelectedText = dgvProduto.SelectedRows[0].Cells[3].ToString();
+                    //categoria = new CategoriaModel();
+                    //categoria = 
+                    //CategoriaBLL cat = new CategoriaBLL();
+                    //cmbCategoria.SelectedIndex = cat.RegistroUnico(categoria.Id); 
+
+                }
+                ///produto = produtos2[dgvProduto.SelectedRows[0].Index];
                 //}
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
+        public List<CategoriaModel> ListarCategoriasCombo()
+        {
+            List<CategoriaModel> lista = new List<CategoriaModel>();
+            return lista;
+        }
+
     }
 }
