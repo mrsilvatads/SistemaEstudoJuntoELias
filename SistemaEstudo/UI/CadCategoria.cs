@@ -1,6 +1,7 @@
 ﻿using SistemaEstudo.BLL;
 using SistemaEstudo.Entidades;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace SistemaEstudo.Views
@@ -13,6 +14,20 @@ namespace SistemaEstudo.Views
             InitializeComponent();
             categoria = new CategoriaModel();
             PreencherGrid();
+            CarregarComboStatus();
+        }
+
+        private void CarregarComboStatus()
+        {
+            Dictionary<string, int> dictionary = new Dictionary<string, int>();
+            foreach (int enumValue in
+            Enum.GetValues(typeof(ENUM.StatusCategoria)))
+            {
+                dictionary.Add(Enum.GetName(typeof(ENUM.StatusCategoria), enumValue), enumValue);
+            }
+            cmbStatus.DisplayMember = "Key";
+            cmbStatus.ValueMember = "Value";
+            cmbStatus.DataSource = new BindingSource(dictionary, null);
         }
 
         private void PreencherGrid()
@@ -33,23 +48,30 @@ namespace SistemaEstudo.Views
         }
         private void Salvar()
         {
-            var bll = new CategoriaBLL();
-            categoria.Id = Convert.ToInt32(txtId.Text);
-            categoria.Nome = txtNome.Text;
-            categoria.Descricao = txtDescricao.Text;
-            categoria.DataCriacao = DateTime.Now;
-            categoria.DataUltimaAlteracao = DateTime.Now;
-            //categoria.Status = chkAtiva.Checked;
-            categoria.Status = chkAtiva.Checked ? chkAtiva.Checked : chkInatinativa.Checked;
-            //bll.Cadastrar(categoria);
-            PreencherGrid();
-            LimparTela();
+            try
+            {
+                var bll = new CategoriaBLL();
+                categoria.Id = Convert.ToInt32(txtId.Text);//Convert.ToInt32(txtId.Text);
+                categoria.Nome = txtNome.Text;
+                categoria.Descricao = txtDescricao.Text;
+                categoria.DataCriacao = DateTime.Now;
+                categoria.DataUltimaAlteracao = DateTime.Now;
+                categoria.Status = Convert.ToBoolean(cmbStatus.SelectedIndex);
+                bll.Cadastrar(categoria);
+                PreencherGrid();
+                LimparTela();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void LimparTela()
         {
             txtId.Text = "";
             txtNome.Text = "";
             txtDescricao.Text = "";
+            cmbStatus.SelectedItem = -1;
         }
         private bool ValidarTela()
         {
@@ -97,28 +119,6 @@ namespace SistemaEstudo.Views
             txtDescricao.Text = categoria.Descricao;
         }
 
-        private void chkAtiva_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox cb = ((CheckBox)sender);
-            if (cb.Checked)
-            {
-                //MessageBox.Show("checado");
-                chkInatinativa.Enabled = false;
-            }
-            else
-                chkInatinativa.Enabled = true;
-        }
 
-        private void chkInatinativa_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox cb = ((CheckBox)sender);
-            if (cb.Checked)
-            {
-                //MessageBox.Show("checado");
-                chkAtiva.Enabled = false;
-            }
-            else
-                chkAtiva.Enabled = true;
-        }
     }
 }

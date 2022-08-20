@@ -37,9 +37,8 @@
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.chkAtiva = new System.Windows.Forms.CheckBox();
-            this.chkInatinativa = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,28 +129,6 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // chkAtiva
-            // 
-            this.chkAtiva.AutoSize = true;
-            this.chkAtiva.Location = new System.Drawing.Point(91, 142);
-            this.chkAtiva.Name = "chkAtiva";
-            this.chkAtiva.Size = new System.Drawing.Size(55, 21);
-            this.chkAtiva.TabIndex = 9;
-            this.chkAtiva.Text = "Ativa";
-            this.chkAtiva.UseVisualStyleBackColor = true;
-            this.chkAtiva.CheckedChanged += new System.EventHandler(this.chkAtiva_CheckedChanged);
-            // 
-            // chkInatinativa
-            // 
-            this.chkInatinativa.AutoSize = true;
-            this.chkInatinativa.Location = new System.Drawing.Point(152, 141);
-            this.chkInatinativa.Name = "chkInatinativa";
-            this.chkInatinativa.Size = new System.Drawing.Size(64, 21);
-            this.chkInatinativa.TabIndex = 10;
-            this.chkInatinativa.Text = "inativa";
-            this.chkInatinativa.UseVisualStyleBackColor = true;
-            this.chkInatinativa.CheckedChanged += new System.EventHandler(this.chkInatinativa_CheckedChanged);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -161,15 +138,23 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Status:";
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Location = new System.Drawing.Point(91, 139);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(180, 25);
+            this.cmbStatus.TabIndex = 12;
+            // 
             // CadCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 667);
+            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chkInatinativa);
-            this.Controls.Add(this.chkAtiva);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.txtDescricao);
@@ -183,7 +168,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CadCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadCategoria";
+            this.Text = "Cadastro de Categorias";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -201,8 +186,7 @@
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.CheckBox chkAtiva;
-        private System.Windows.Forms.CheckBox chkInatinativa;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }

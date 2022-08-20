@@ -13,10 +13,6 @@ namespace SistemaEstudo.Views
         ProdutoModel produto;
         CategoriaModel categoria;//teste elias 03/07/2022
         List<ProdutoModel> listaProduto ;
-
-
-        //List<ModelAluno> alunos;
-        //ModelAluno aluno = new ModelAluno();
         List<ProdutoModel> produtos2;
         ProdutoModel produto2 = new ProdutoModel();
 
@@ -75,7 +71,6 @@ namespace SistemaEstudo.Views
                     produto.Categoria = (CategoriaModel)cmbCategoria.SelectedItem;//.Nome.ToString();
                     produto.DataCriacao = DateTime.Now;
                     produto.DataUltimaAlteracao = DateTime.Now;
-                    // produto.Status = true;//implementar campo
                     produto.Status = Convert.ToBoolean(cmbStatus.SelectedIndex);
                     bll.Cadastrar(produto);
                     PreencherGrid();
@@ -157,6 +152,7 @@ namespace SistemaEstudo.Views
                     //cmbCategoria.SelectedIndex = cat.RegistroUnico(categoria.Id); 
 
                 }
+                btnExcluir.Visible = true;
                 ///produto = produtos2[dgvProduto.SelectedRows[0].Index];
                 //}
 
@@ -173,5 +169,14 @@ namespace SistemaEstudo.Views
             return lista;
         }
 
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadProduto_Load(object sender, EventArgs e)
+        {
+            btnExcluir.Visible = false;
+        }
     }
 }

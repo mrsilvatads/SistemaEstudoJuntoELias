@@ -16,35 +16,44 @@ namespace SistemaEstudo.DAO
             {
                 using (StreamWriter sw = File.CreateText(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
                 {
-                    sw.WriteLine(categoria.Id + ";"+ categoria.Nome + ";" + categoria.Descricao + ";" + categoria.DataCriacao + ";" + categoria.DataUltimaAlteracao);
+                    sw.WriteLine(categoria.Id + ";"+ categoria.Nome + ";" + categoria.Descricao + ";" + categoria.Status + ";" + categoria.DataCriacao + ";" + categoria.DataUltimaAlteracao);
                 }
             }
             else
             {
                 List<string> linhas = File.ReadAllLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt").ToList();
-                linhas.Insert(linhas.Count, categoria.Id + ";" + categoria.Nome + ";" + categoria.Descricao + ";" + categoria.DataCriacao + ";" + categoria.DataUltimaAlteracao);
+                linhas.Insert(linhas.Count, categoria.Id + ";" + categoria.Nome + ";" + categoria.Descricao + ";" + categoria.Status + ";" + categoria.DataCriacao + ";" + categoria.DataUltimaAlteracao);
                 File.WriteAllLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt", linhas);
             }
             return categoria;
         }
         public List<CategoriaModel> GetAll()
         {
-            if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
-                return null;
-            List<CategoriaModel> retornoCategorias = new List<CategoriaModel>();
-            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
+            try
             {
-                string[] dado = line.Split(';');
-                CategoriaModel categoria = new CategoriaModel();
-                categoria.Id = Convert.ToInt32(dado[0]);
-                categoria.Nome = dado[1];
-                categoria.Descricao= dado[2];
-                categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
-                categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
-               // categoria.Status = dados[5];
-                retornoCategorias.Add(categoria);
+                if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
+                    return null;
+                List<CategoriaModel> retornoCategorias = new List<CategoriaModel>();
+                foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
+                {
+                    string[] dado = line.Split(';');
+                    CategoriaModel categoria = new CategoriaModel();
+                    categoria.Id = Convert.ToInt32(dado[0]);
+                    categoria.Nome = dado[1];
+                    categoria.Descricao = dado[2];
+                    categoria.Status = true;//dado[3, ""].ToString();
+                    categoria.DataCriacao = Convert.ToDateTime(dado[4].ToString());
+                    categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[5].ToString());
+                    // categoria.Status = Convert.ToBoolean(dados[5].ToString()); //ainda não existe no BD 20/08
+                    retornoCategorias.Add(categoria);
+                }
+                return retornoCategorias;
             }
-            return retornoCategorias;
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
         public CategoriaModel GetCategoria(int id)
         {

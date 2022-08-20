@@ -46,6 +46,7 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.cmbUnidade = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
+            this.btnExcluir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,12 +215,23 @@
             this.cmbStatus.Size = new System.Drawing.Size(121, 25);
             this.cmbStatus.TabIndex = 23;
             // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Location = new System.Drawing.Point(224, 219);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(75, 30);
+            this.btnExcluir.TabIndex = 24;
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
             // CadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(630, 701);
+            this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.cmbUnidade);
             this.Controls.Add(this.cmbCategoria);
@@ -242,7 +254,8 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "CadProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CadProduto";
+            this.Text = "Cadastro de Produtos";
+            this.Load += new System.EventHandler(this.CadProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,5 +282,6 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.ComboBox cmbUnidade;
         private System.Windows.Forms.ComboBox cmbStatus;
+        private System.Windows.Forms.Button btnExcluir;
     }
 }
