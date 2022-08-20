@@ -67,9 +67,10 @@ namespace SistemaEstudo.DAO
                 categoria.Nome = dado[1];
                 categoria.Descricao = dado[2];
                 //teste
-                categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
-                categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+                //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
+                //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
                 //categoria.Status = Convert.ToBoolean(dado[5]);
+                //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
                 retornaCategoria.Add(categoria);
             }
             var teste = retornaCategoria.FirstOrDefault(cat => cat.Id == id);

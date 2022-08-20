@@ -136,26 +136,21 @@ namespace SistemaEstudo.Views
 
                     listaProduto = new List<ProdutoModel>();
                     produto = new ProdutoModel();
-
                     txtId.Enabled = false;
                     btnSalvar.Text = "Alterar";
-
-                    txtId.Text = dgvProduto.SelectedRows[0].Cells[7].Value.ToString();
+                    //txtId.Text = dgvProduto.SelectedRows[0].Cells[7].Value.ToString();//pegar da base entidades
                     txtNome.Text =  dgvProduto.SelectedRows[0].Cells[0].Value.ToString();
                     txtDescricao.Text = dgvProduto.SelectedRows[0].Cells[1].Value.ToString();
                     txtValor.Text = dgvProduto.SelectedRows[0].Cells[2].Value.ToString();
-                    txtQuantidadeEstoque.Text = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
+                    cmbUnidade.SelectedItem = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
+                    txtQuantidadeEstoque.Text = dgvProduto.SelectedRows[0].Cells[4].Value.ToString();
                     //cmbUnidade.SelectedItem = Convert.ToInt32(dgvProduto.SelectedRows[0].Cells[3].ToString());//cmbUnidade.SelectedText = dgvProduto.SelectedRows[0].Cells[3].ToString();
-                    //categoria = new CategoriaModel();
-                    //categoria = 
+                    ///cmbCategoria.SelectedItem = dgvProduto
                     //CategoriaBLL cat = new CategoriaBLL();
-                    //cmbCategoria.SelectedIndex = cat.RegistroUnico(categoria.Id); 
+                    ///cmbStatus.SelectedItem = dgvProduto.SelectedRows[0].Cells[].Value.ToString();//pega da base.cs ??
 
                 }
                 btnExcluir.Visible = true;
-                ///produto = produtos2[dgvProduto.SelectedRows[0].Index];
-                //}
-
             }
             catch (Exception ex)
             {

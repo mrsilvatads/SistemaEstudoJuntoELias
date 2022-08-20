@@ -1,6 +1,6 @@
-1;Cadeira;madeira;50;30;30;;False;01/01/0001 00:00:00;01/01/0001 00:00:00
-2;Mesa;vidro;300;5;4;;False;03/07/2022 11:36:01;03/07/2022 11:36:01
-3;Vidro;Vidro;90;80;10;;False;03/07/2022 11:37:48;03/07/2022 11:37:48
+1;Cadeira;madeira;50;30;30;SistemaEstudo.Entidades.CategoriaModel;False;01/01/0001 00:00:00;01/01/0001 00:00:00
+2;Mesa;vidro;300;5;4;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 11:36:01;03/07/2022 11:36:01
+3;Vidro;Vidro;90;80;10;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 11:37:48;03/07/2022 11:37:48
 5;sapolio;limpeza;10;2;2;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 13:53:42;03/07/2022 13:53:42
 6;tomates;comida;10;0;10;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:04:07;03/07/2022 14:04:07
 100;teste;teste;12131;;1212;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:45:05;03/07/2022 14:45:05

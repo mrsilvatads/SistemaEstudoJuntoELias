@@ -44,16 +44,10 @@ namespace SistemaEstudo.DAO
                     produto.Valor = Convert.ToInt32(dado[3]);
                     produto.Unidade = dado[4];
                     produto.QuantidadeEstoque = Convert.ToInt32(dado[5]);
-                    produto.Status = true;//boolean.Parse(dado[6].ToString());
-                    ///produto.Status = Convert.ToBoolean(dado[6]);
-                    //CategoriaModel categoria = new CategoriaModel();
-                    //produto.Categoria.Id = Convert.ToInt32(dado[3]);
+                    produto.Status = true;//boolean.Parse(dado[6].ToString()); //categoria.Status = checado;//Convert.ToBoolean(dado[5].ToString);
+                    ///CategoriaModel categoria = new CategoriaModel();
+                    ///produto.//.Categoria.Id = Convert.ToInt32(dado[3]);
                     //Convert.ToBoolean(dados[7]);//boolean.Parse(dado[7]);
-                    //produto.Status = (Convert.ToBoolean)dado[6];//Convert.ToBoolean(dado[6]);//Boolean.Parse(dado[6]);
-                    /*
-                    //bool checado = Convert.ToBoolean(dado[5].ToString());
-                    //categoria.Status = checado;//Convert.ToBoolean(dado[5].ToString);
-                    */
                     produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
                     produto.DataUltimaAlteracao = Convert.ToDateTime(dado[9]);
                     retorno.Add(produto);
@@ -64,7 +58,28 @@ namespace SistemaEstudo.DAO
             {
                 throw;
             }
-            
+        }
+        public ProdutoModel GetProdutoId(int idProduto)
+        {
+
+            ProdutoModel produto = new ProdutoModel();
+            List<ProdutoModel> retornaProduto2 = new List<ProdutoModel>();
+            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Produto.txt"))
+            {
+                string[] dado = line.Split(';');
+                //CategoriaModel categoria = new CategoriaModel();
+                produto.Id = Convert.ToInt32(dado[0]);
+                produto.Nome = dado[1];
+                produto.Descricao = dado[2];
+                //teste
+                //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
+                //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+                //categoria.Status = Convert.ToBoolean(dado[5]);
+                //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
+                retornaProduto2.Add(produto);
+            }
+            var teste = retornaProduto2.FirstOrDefault(cat => cat.Id == idProduto);//filtrar a lista 
+            return teste;
         }
     }
 }

@@ -1,10 +1,6 @@
 ﻿using SistemaEstudo.DAO;
 using SistemaEstudo.Entidades;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SistemaEstudo.BLL
 {
@@ -23,5 +19,15 @@ namespace SistemaEstudo.BLL
             var dao = new ProdutoDao();
             return dao.GetAll();
         }
+
+        public ProdutoModel RetornarProduto(int idProduto)
+        {//teste elias 20/08
+            var retornaProduto = new ProdutoModel();
+            var dao = new ProdutoDao();
+            retornaProduto = dao.GetProdutoId(idProduto);
+            return retornaProduto;
+        }
+
+        
     }
 }
