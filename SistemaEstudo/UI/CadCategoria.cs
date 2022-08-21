@@ -34,9 +34,9 @@ namespace SistemaEstudo.Views
         {
             var bll = new CategoriaBLL();
             var categorias = bll.RetornarCategorias();
-            dgvCategorias.DataSource = null;
-            dgvCategorias.DataSource = categorias;
-            dgvCategorias.Refresh();
+            dgvCategoria.DataSource = null;
+            dgvCategoria.DataSource = categorias;
+            dgvCategoria.Refresh();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -119,6 +119,27 @@ namespace SistemaEstudo.Views
             txtDescricao.Text = categoria.Descricao;
         }
 
+        private void dgvCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                var teste = new CategoriaModel();
+                if (dgvCategoria.SelectedRows.Count > 0)
+                {
+                    //forma providoria
+                    txtNome.Text = dgvCategoria.SelectedRows[0].Cells[0].Value.ToString();
+                    txtDescricao.Text = dgvCategoria.SelectedRows[0].Cells[1].Value.ToString();
+                    cmbStatus.SelectedItem = dgvCategoria.SelectedRows[0].Cells[2].Value.ToString();
+                    //teste.Id = dgvCategoria.SelectedRows[0].Cells[0].Value.ToString();
 
+                    //var bll = new CategoriaBLL();
+                    //var categoria = bll.RegistroUnico();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

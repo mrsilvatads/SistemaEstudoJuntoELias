@@ -35,11 +35,11 @@
             this.txtId = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.dgvCategorias = new System.Windows.Forms.DataGridView();
+            this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -108,16 +108,17 @@
             this.txtDescricao.TabIndex = 6;
             this.txtDescricao.TextChanged += new System.EventHandler(this.txtDescricao_TextChanged);
             // 
-            // dgvCategorias
+            // dgvCategoria
             // 
-            this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(12, 224);
-            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.ReadOnly = true;
-            this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategorias.Size = new System.Drawing.Size(602, 430);
-            this.dgvCategorias.TabIndex = 7;
+            this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategoria.Location = new System.Drawing.Point(12, 224);
+            this.dgvCategoria.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvCategoria.Name = "dgvCategoria";
+            this.dgvCategoria.ReadOnly = true;
+            this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCategoria.Size = new System.Drawing.Size(602, 430);
+            this.dgvCategoria.TabIndex = 7;
+            this.dgvCategoria.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellDoubleClick);
             // 
             // btnPesquisar
             // 
@@ -156,7 +157,7 @@
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.dgvCategorias);
+            this.Controls.Add(this.dgvCategoria);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtId);
@@ -169,7 +170,7 @@
             this.Name = "CadCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Categorias";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,7 +185,7 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.DataGridView dgvCategorias;
+        private System.Windows.Forms.DataGridView dgvCategoria;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbStatus;

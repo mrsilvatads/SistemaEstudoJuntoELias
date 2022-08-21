@@ -44,10 +44,9 @@ namespace SistemaEstudo.DAO
                     produto.Valor = Convert.ToInt32(dado[3]);
                     produto.Unidade = dado[4];
                     produto.QuantidadeEstoque = Convert.ToInt32(dado[5]);
-                    produto.Status = true;//boolean.Parse(dado[6].ToString()); //categoria.Status = checado;//Convert.ToBoolean(dado[5].ToString);
                     ///CategoriaModel categoria = new CategoriaModel();
-                    ///produto.//.Categoria.Id = Convert.ToInt32(dado[3]);
-                    //Convert.ToBoolean(dados[7]);//boolean.Parse(dado[7]);
+                    ///produto.//.Categoria.Id = Convert.ToInt32(dado[6]);
+                    produto.Status = Convert.ToBoolean(dado[7]);//true;//boolean.Parse(dado[6].ToString()); //categoria.Status = checado;//Convert.ToBoolean(dado[5].ToString);
                     produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
                     produto.DataUltimaAlteracao = Convert.ToDateTime(dado[9]);
                     retorno.Add(produto);
@@ -71,10 +70,11 @@ namespace SistemaEstudo.DAO
                 produto.Id = Convert.ToInt32(dado[0]);
                 produto.Nome = dado[1];
                 produto.Descricao = dado[2];
+                produto.Valor = Convert.ToInt32(dado[3]);
+                produto.Unidade = dado[4];
                 //teste
-                //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
                 //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
-                //categoria.Status = Convert.ToBoolean(dado[5]);
+                produto.Status = Convert.ToBoolean(dado[7]);
                 //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
                 retornaProduto2.Add(produto);
             }

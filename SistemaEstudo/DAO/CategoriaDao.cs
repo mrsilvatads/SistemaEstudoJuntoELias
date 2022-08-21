@@ -41,10 +41,9 @@ namespace SistemaEstudo.DAO
                     categoria.Id = Convert.ToInt32(dado[0]);
                     categoria.Nome = dado[1];
                     categoria.Descricao = dado[2];
-                    categoria.Status = true;//dado[3, ""].ToString();
+                    categoria.Status = Convert.ToBoolean(dado[3]);// categoria.Status = Convert.ToBoolean(dados[5].ToString()); //ainda não existe no BD 20/08
                     categoria.DataCriacao = Convert.ToDateTime(dado[4].ToString());
                     categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[5].ToString());
-                    // categoria.Status = Convert.ToBoolean(dados[5].ToString()); //ainda não existe no BD 20/08
                     retornoCategorias.Add(categoria);
                 }
                 return retornoCategorias;
@@ -66,6 +65,7 @@ namespace SistemaEstudo.DAO
                 categoria.Id = Convert.ToInt32(dado[0]);
                 categoria.Nome = dado[1];
                 categoria.Descricao = dado[2];
+                categoria.Status = Convert.ToBoolean(dado[3]);
                 //teste
                 //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
                 //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());

@@ -144,10 +144,8 @@ namespace SistemaEstudo.Views
                     txtValor.Text = dgvProduto.SelectedRows[0].Cells[2].Value.ToString();
                     cmbUnidade.SelectedItem = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
                     txtQuantidadeEstoque.Text = dgvProduto.SelectedRows[0].Cells[4].Value.ToString();
-                    //cmbUnidade.SelectedItem = Convert.ToInt32(dgvProduto.SelectedRows[0].Cells[3].ToString());//cmbUnidade.SelectedText = dgvProduto.SelectedRows[0].Cells[3].ToString();
                     ///cmbCategoria.SelectedItem = dgvProduto
-                    //CategoriaBLL cat = new CategoriaBLL();
-                    ///cmbStatus.SelectedItem = dgvProduto.SelectedRows[0].Cells[].Value.ToString();//pega da base.cs ??
+                    cmbStatus.SelectedItem = Boolean.Parse(dgvProduto.Rows[0].Cells[9].Value.ToString());//pega da base.cs ??//21/08
 
                 }
                 btnExcluir.Visible = true;

@@ -1,11 +1,14 @@
 1;Cadeira;madeira;50;30;30;SistemaEstudo.Entidades.CategoriaModel;False;01/01/0001 00:00:00;01/01/0001 00:00:00
-2;Mesa;vidro;300;5;4;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 11:36:01;03/07/2022 11:36:01
+2;Mesa;vidro;300;Metro;4;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 11:36:01;03/07/2022 11:36:01
 3;Vidro;Vidro;90;80;10;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 11:37:48;03/07/2022 11:37:48
 5;sapolio;limpeza;10;2;2;SistemaEstudo.Entidades.CategoriaModel;False;03/07/2022 13:53:42;03/07/2022 13:53:42
-6;tomates;comida;10;0;10;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:04:07;03/07/2022 14:04:07
+6;tomates;comida;10;KILO;10;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:04:07;03/07/2022 14:04:07
 100;teste;teste;12131;;1212;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:45:05;03/07/2022 14:45:05
 555;testeteesasd;dasdsa;1212312;KILO;12;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 14:55:43;03/07/2022 14:55:43
 444;dasdasdd;sdasdasda;2232;KILO;21;SistemaEstudo.Entidades.CategoriaModel;True;03/07/2022 15:10:51;03/07/2022 15:10:51
 89989;mouse pad;informatica;20;CABEÇA;2;SistemaEstudo.Entidades.CategoriaModel;True;29/07/2022 17:09:36;29/07/2022 17:09:36
 222111;cxzczx;xzxc;10;METRO;90;SistemaEstudo.Entidades.CategoriaModel;True;29/07/2022 17:14:45;29/07/2022 17:14:46
 7;controle remoto ps3;eletronico util;10;CABEÇA;50;SistemaEstudo.Entidades.CategoriaModel;True;20/08/2022 11:26:53;20/08/2022 11:26:53
+99;fones;teste;20;CABEÇA;2;SistemaEstudo.Entidades.CategoriaModel;True;21/08/2022 10:46:35;21/08/2022 10:46:35
+25;25;25;25;KILO;25;SistemaEstudo.Entidades.CategoriaModel;True;21/08/2022 11:12:06;21/08/2022 11:12:06
+26;26;26;26;KILO;26;SistemaEstudo.Entidades.CategoriaModel;False;21/08/2022 11:12:38;21/08/2022 11:12:38
