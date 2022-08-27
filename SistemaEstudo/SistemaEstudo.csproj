@@ -89,6 +89,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\teste.Designer.cs">
+      <DependentUpon>teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTIL\ClsLogError.cs" />
+    <Compile Include="UTIL\ClsPathExe.cs" />
     <EmbeddedResource Include="UI\CadCategoria.resx">
       <DependentUpon>CadCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +119,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\teste.resx">
+      <DependentUpon>teste.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -34,6 +34,7 @@ namespace SistemaEstudo
             this.btnProduto = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblVersao = new System.Windows.Forms.Label();
+            this.btnTeste = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -88,11 +89,22 @@ namespace SistemaEstudo
             this.lblVersao.TabIndex = 4;
             this.lblVersao.Text = "label2";
             // 
+            // btnTeste
+            // 
+            this.btnTeste.Location = new System.Drawing.Point(334, 21);
+            this.btnTeste.Name = "btnTeste";
+            this.btnTeste.Size = new System.Drawing.Size(75, 23);
+            this.btnTeste.TabIndex = 5;
+            this.btnTeste.Text = "Tela teste";
+            this.btnTeste.UseVisualStyleBackColor = true;
+            this.btnTeste.Click += new System.EventHandler(this.btnTeste_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 485);
+            this.Controls.Add(this.btnTeste);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnProduto);
@@ -114,6 +126,7 @@ namespace SistemaEstudo
         private System.Windows.Forms.Button btnProduto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblVersao;
+        private System.Windows.Forms.Button btnTeste;
     }
 }
 

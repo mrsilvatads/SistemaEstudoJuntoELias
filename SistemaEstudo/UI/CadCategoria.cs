@@ -63,6 +63,7 @@ namespace SistemaEstudo.Views
             }
             catch (Exception ex)
             {
+                UTIL.ClsLogError.LogError(ex.Message + "Salvar()", ex);
                 MessageBox.Show(ex.Message);
             }
         }
@@ -129,8 +130,7 @@ namespace SistemaEstudo.Views
                     //forma providoria
                     txtNome.Text = dgvCategoria.SelectedRows[0].Cells[0].Value.ToString();
                     txtDescricao.Text = dgvCategoria.SelectedRows[0].Cells[1].Value.ToString();
-                    cmbStatus.SelectedItem = dgvCategoria.SelectedRows[0].Cells[2].Value.ToString();
-                    //teste.Id = dgvCategoria.SelectedRows[0].Cells[0].Value.ToString();
+                    cmbStatus.SelectedItem = dgvCategoria.SelectedRows[0].Cells[2].Value.ToString();//n]ao esta funcionando!!
 
                     //var bll = new CategoriaBLL();
                     //var categoria = bll.RegistroUnico();
@@ -138,6 +138,7 @@ namespace SistemaEstudo.Views
             }
             catch (Exception ex)
             {
+                UTIL.ClsLogError.LogError(ex.Message + "dgvCategorias_CellDoubleClick()", ex);
                 MessageBox.Show(ex.Message);
             }
         }

@@ -61,25 +61,37 @@ namespace SistemaEstudo.DAO
         public ProdutoModel GetProdutoId(int idProduto)
         {
 
-            ProdutoModel produto = new ProdutoModel();
-            List<ProdutoModel> retornaProduto2 = new List<ProdutoModel>();
-            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Produto.txt"))
+            try
             {
-                string[] dado = line.Split(';');
-                //CategoriaModel categoria = new CategoriaModel();
-                produto.Id = Convert.ToInt32(dado[0]);
-                produto.Nome = dado[1];
-                produto.Descricao = dado[2];
-                produto.Valor = Convert.ToInt32(dado[3]);
-                produto.Unidade = dado[4];
-                //teste
-                //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
-                produto.Status = Convert.ToBoolean(dado[7]);
-                //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
-                retornaProduto2.Add(produto);
+                ProdutoModel produto = new ProdutoModel();
+                //List<ProdutoModel> retornaProduto2 = new List<ProdutoModel>();
+
+                foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Produto.txt"))
+                {
+                    string[] dado = line.Split(';');
+                    //CategoriaModel categoria = new CategoriaModel();
+                    if (Convert.ToInt32(dado[0]) == idProduto)
+                    {
+                        produto.Id = Convert.ToInt32(dado[0]);
+                        produto.Nome = dado[1];
+                        produto.Descricao = dado[2];
+                        produto.Valor = Convert.ToInt32(dado[3]);
+                        produto.Unidade = dado[4];
+                        //teste
+                        //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+                        produto.Status = Convert.ToBoolean(dado[7]);
+                        produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
+                        //retornaProduto2.Add(produto);
+                        break;
+                    }
+                }
+                // var teste = retornaProduto2.FirstOrDefault(cat => cat.Id == idProduto);//filtrar a lista 
+                return produto;
+            } catch (Exception ex)
+            {
+                UTIL.ClsLogError.LogError(ex.Message + "GetProdutoId(int idProduto)", ex);
+                return null;
             }
-            var teste = retornaProduto2.FirstOrDefault(cat => cat.Id == idProduto);//filtrar a lista 
-            return teste;
         }
     }
 }

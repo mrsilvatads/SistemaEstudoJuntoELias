@@ -1,4 +1,5 @@
-﻿using SistemaEstudo.Views;
+﻿using SistemaEstudo.UI;//para form teste
+using SistemaEstudo.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,13 @@ namespace SistemaEstudo
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             lblVersao.Text = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+
+        private void btnTeste_Click(object sender, EventArgs e)
+        {
+            teste form = new teste();
+            form.ShowDialog();
+            
         }
     }
 }

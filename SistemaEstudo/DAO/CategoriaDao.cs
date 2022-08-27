@@ -50,31 +50,44 @@ namespace SistemaEstudo.DAO
             }
             catch (Exception ex)
             {
+                UTIL.ClsLogError.LogError(ex.Message + "GetAll()", ex);
                 throw;
             }
 
         }
         public CategoriaModel GetCategoria(int id)
         {
-            CategoriaModel retorno = new CategoriaModel();
-            List<CategoriaModel> retornaCategoria = new List<CategoriaModel>();
-            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
+            try
             {
-                string[] dado = line.Split(';');
-                CategoriaModel categoria = new CategoriaModel();
-                categoria.Id = Convert.ToInt32(dado[0]);
-                categoria.Nome = dado[1];
-                categoria.Descricao = dado[2];
-                categoria.Status = Convert.ToBoolean(dado[3]);
-                //teste
-                //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
-                //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
-                //categoria.Status = Convert.ToBoolean(dado[5]);
-                //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
-                retornaCategoria.Add(categoria);
+                CategoriaModel retorno = new CategoriaModel();
+                //List<CategoriaModel> retornaCategoria = new List<CategoriaModel>();
+                foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\bd\Categoria.txt"))
+                {
+                    string[] dado = line.Split(';');
+                    if (Convert.ToInt32(dado[0]) == id)
+                    {
+                        CategoriaModel categoria = new CategoriaModel();
+                        categoria.Id = Convert.ToInt32(dado[0]);
+                        categoria.Nome = dado[1];
+                        categoria.Descricao = dado[2];
+                        categoria.Status = Convert.ToBoolean(dado[3]);
+                        //teste
+                        //categoria.DataCriacao = Convert.ToDateTime(dado[3].ToString());
+                        //categoria.DataUltimaAlteracao = Convert.ToDateTime(dado[4].ToString());
+                        //categoria.Status = Convert.ToBoolean(dado[5]);
+                        //produto.DataCriacao = Convert.ToDateTime(dado[8].ToString());
+                        //retornaCategoria.Add(categoria);
+                        break;
+                    }
+                }
+                //var teste = retornaCategoria.FirstOrDefault(cat => cat.Id == id);
+                return retorno;
             }
-            var teste = retornaCategoria.FirstOrDefault(cat => cat.Id == id);
-            return teste;
+            catch (Exception ex)
+            {
+                UTIL.ClsLogError.LogError(ex.Message + "GetCategoria(int id)", ex);
+                return null;
+            }
         }
     }
 }

@@ -87,6 +87,7 @@ namespace SistemaEstudo.Views
                 }
             } catch(Exception ex)
             {
+                UTIL.ClsLogError.LogError(ex.Message + "Salvar()", ex);
                 MessageBox.Show(ex.Message);
             }
             
@@ -152,6 +153,7 @@ namespace SistemaEstudo.Views
             }
             catch (Exception ex)
             {
+                UTIL.ClsLogError.LogError(ex.Message + "dgvProduto_CellDoubleClick()", ex);
                 MessageBox.Show(ex.Message);
             }
         }

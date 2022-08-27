@@ -25,7 +25,6 @@ C:\Users\Elias\Source\Repos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\Sist
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\bin\Debug\SistemaEstudo.exe.config
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\bin\Debug\SistemaEstudo.exe
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\bin\Debug\SistemaEstudo.pdb
-C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.csprojAssemblyReference.cache
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.Views.CadCategoria.resources
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.Views.CadPessoa.resources
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.Views.CadProduto.resources
@@ -35,3 +34,5 @@ C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\Si
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.csproj.CoreCompileInputs.cache
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.exe
 C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.pdb
+C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.UI.teste.resources
+C:\Users\Elias\Desktop\marcos\SistemaEstudoJuntoELias\SistemaEstudo\obj\Debug\SistemaEstudo.csprojAssemblyReference.cache
